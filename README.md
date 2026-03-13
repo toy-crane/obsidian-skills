@@ -55,7 +55,8 @@ Create and edit [Excalidraw](https://excalidraw.com/) diagram JSON files with a 
 
 ```bash
 /plugin marketplace add toy-crane/obsidian-skills
-/plugin install obsidian@obsidian-skills
+/plugin install obsidian-save@obsidian-plugins
+/plugin install obsidian-excalidraw@obsidian-plugins
 ```
 
 ### npx skills

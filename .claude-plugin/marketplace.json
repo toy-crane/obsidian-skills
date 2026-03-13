@@ -1,5 +1,5 @@
 {
-  "name": "obsidian-skills",
+  "name": "obsidian-plugins",
   "owner": {
     "name": "Toy Crane",
     "email": ""
@@ -9,13 +9,22 @@
   },
   "plugins": [
     {
-      "name": "obsidian-skills",
+      "name": "obsidian-save",
       "source": "./",
-      "description": "Save content, create diagrams, and more for Obsidian vaults",
-      "keywords": ["obsidian", "vault", "note-taking", "excalidraw", "content-saving"],
+      "description": "Save content from YouTube, web, X, and more to Obsidian",
+      "keywords": ["obsidian", "vault", "note-taking", "content-saving"],
       "skills": [
         "./skills/save",
-        "./skills/batch-save",
+        "./skills/batch-save"
+      ],
+      "agents": ["./agents/korean-reviewer.md"]
+    },
+    {
+      "name": "obsidian-excalidraw",
+      "source": "./",
+      "description": "Create and edit Excalidraw diagrams for Obsidian",
+      "keywords": ["obsidian", "excalidraw", "diagram"],
+      "skills": [
         "./skills/excalidraw"
       ]
     }
