@@ -10,9 +10,14 @@
   "plugins": [
     {
       "name": "obsidian-skills",
-      "source": ".",
+      "source": "./",
       "description": "Save content, create diagrams, and more for Obsidian vaults",
-      "keywords": ["obsidian", "vault", "note-taking", "excalidraw", "content-saving"]
+      "keywords": ["obsidian", "vault", "note-taking", "excalidraw", "content-saving"],
+      "skills": [
+        "./skills/save",
+        "./skills/batch-save",
+        "./skills/excalidraw"
+      ]
     }
   ]
 }
