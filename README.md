@@ -10,7 +10,7 @@ Save any content to your Obsidian vault with auto-generated frontmatter (tags, a
 
 Supported sources:
 - **YouTube** -- extracts transcript, restructures by core arguments
-- **Web pages** -- clean extraction via [Defuddle](https://github.com/nicholasgriffintn/defuddle)
+- **Web pages** -- clean extraction via [Defuddle](https://github.com/kepano/defuddle)
 - **X (Twitter) posts** -- thread-aware extraction
 - **Documents** -- PDF, DOCX, and other file formats
 - **Raw text** -- paste any text directly
@@ -51,22 +51,23 @@ Create and edit [Excalidraw](https://excalidraw.com/) diagram JSON files with a 
 
 ## Installation
 
-### Claude Code Plugin
+### Marketplace
 
 ```bash
-/plugin add toy-crane/obsidian-skills
+/plugin marketplace add toy-crane/obsidian-skills
+/plugin install obsidian@obsidian-skills
 ```
 
-### skills.sh
+### npx skills
 
 ```bash
-npx skills add toy-crane/obsidian-skills
+npx skills add git@github.com:toy-crane/obsidian-skills.git
 ```
 
 ## Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI
-- [Defuddle](https://github.com/nicholasgriffintn/defuddle) CLI (`npm install -g defuddle`) -- for web page extraction
+- [Defuddle](https://github.com/kepano/defuddle) CLI (`npm install -g defuddle`) -- for web page extraction
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) -- for YouTube transcript extraction
 - [uv](https://github.com/astral-sh/uv) -- for Excalidraw rendering (Python)
 - [Bun](https://bun.sh/) -- for running TypeScript scripts
