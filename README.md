@@ -13,13 +13,7 @@ A collection of [Claude Code](https://docs.anthropic.com/en/docs/claude-code) sk
 ## Installation
 
 ```bash
-# Clone the repo
-git clone https://github.com/toy-crane/obsidian-skills.git ~/obsidian-skills
-
-# Symlink individual skills into your project's .claude/skills/
-ln -sf ~/obsidian-skills/skills/save .claude/skills/save
-ln -sf ~/obsidian-skills/skills/batch-save .claude/skills/batch-save
-ln -sf ~/obsidian-skills/skills/excalidraw .claude/skills/excalidraw
+/plugin add toy-crane/obsidian-skills
 ```
 
 ## License

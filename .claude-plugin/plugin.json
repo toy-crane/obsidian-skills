@@ -1,0 +1,12 @@
+{
+  "name": "obsidian-skills",
+  "version": "1.0.0",
+  "description": "Claude Code skills for managing an Obsidian vault",
+  "author": {
+    "name": "Toy Crane",
+    "url": "https://github.com/toy-crane"
+  },
+  "repository": "https://github.com/toy-crane/obsidian-skills",
+  "license": "MIT",
+  "keywords": ["obsidian", "vault", "note-taking", "excalidraw", "content-saving"]
+}
