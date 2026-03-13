@@ -12,8 +12,16 @@ A collection of [Claude Code](https://docs.anthropic.com/en/docs/claude-code) sk
 
 ## Installation
 
+### Claude Code Plugin
+
 ```bash
 /plugin add toy-crane/obsidian-skills
+```
+
+### skills.sh
+
+```bash
+npx skills add toy-crane/obsidian-skills
 ```
 
 ## License
