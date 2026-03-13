@@ -47,7 +47,7 @@ Check in this order:
 Skip for Document File, Raw Text, and Conversation.
 
 ```bash
-grep -rl "source:.*<URL>" --include="*.md" .
+grep -rl "source:.*<DOMAIN_AND_PATH>" --include="*.md" .
 ```
 
 If match found:
@@ -63,7 +63,7 @@ If match found:
 
 1. Run extraction:
 ```
-Bash: .claude/skills/save/scripts/extract-yt.sh "<URL>"
+Bash: .claude/skills/save/scripts/extract-defuddle.sh "<URL>"
 ```
 
 2. **Validate** (Change #2): Check exit code AND `$SAVE_CTX/extracted.txt` non-empty. If failed, inform user and abort.
@@ -72,7 +72,7 @@ Bash: .claude/skills/save/scripts/extract-yt.sh "<URL>"
 
 Run extraction:
 ```
-Bash: .claude/skills/save/scripts/extract-x.sh "<URL>"
+Bash: .claude/skills/save/scripts/extract-defuddle.sh "<URL>"
 ```
 
 **Validate** (Change #2): Check exit code AND `$SAVE_CTX/extracted.txt` non-empty. If failed, inform user and abort.

@@ -1,6 +1,6 @@
 ---
 name: batch-save
-description: Save multiple URLs in parallel to Obsidian. Fire-and-forget, no session switching needed.
+description: Save multiple URLs in parallel to Obsidian. Fire-and-forget, no session switching needed. Use when user provides multiple URLs to save at once, says "batch save", "save these URLs", "여러 개 저장", "이것들 저장해줘", or pastes a list of links.
 argument-hint: "[--orig] <url1> <url2> [url3] ..."
 user-invocable: true
 ---
@@ -51,8 +51,8 @@ If no duplicates, proceed silently.
 Fetch a brief summary for each URL so the user knows what they're saving.
 
 For each URL, detect type and fetch title:
-- **YouTube**: Run `npx defuddle parse "<URL>" --json 2>/dev/null | jq -r '[.title, .author] | join(" ||| ")'`
-- **X/Twitter**: Run `npx defuddle parse "<URL>" --json 2>/dev/null | jq -r '[.author, .title] | join(": ")'`
+- **YouTube**: Run `defuddle parse "<URL>" --json 2>/dev/null | jq -r '[.title, .author] | join(" ||| ")'`
+- **X/Twitter**: Run `defuddle parse "<URL>" --json 2>/dev/null | jq -r '[.author, .title] | join(": ")'`
   (FxTwitter API fetches actual tweet content, unlike OG meta which is empty for regular posts)
 - **Web**: Use `curl -sL "<URL>" 2>/dev/null | sed -n 's/.*<title>\([^<]*\)<\/title>.*/\1/p' | head -1`
 
@@ -90,7 +90,7 @@ Task tool:
     Read .claude/skills/save/SKILL.md and execute the full save workflow for this URL:
     - URL: "<URL>"
     - keep_original_lang: <true|false>
-    - Skip Step 9.2 (branch rename) and Step 9.3 (next action offer)
+    - Skip Step 9.1 (Korean review), Step 9.2 (branch rename), and Step 9.3 (next action offer)
 
     After saving, respond with EXACTLY this format:
     SAVED: <filename>.md
@@ -115,6 +115,24 @@ Parse each subagent's response. Build a results table:
 | 1 | YouTube | ... | Saved | `01-inbox/...` |
 | 2 | Web | ... | Saved | `01-inbox/...` |
 | 3 | X Post | ... | Failed (reason) | - |
+
+## Step 5.5: Korean Review
+
+For each successfully saved file, launch korean-reviewer subagents **in parallel** (same batching as Step 4):
+
+```
+Task tool:
+  subagent_type: korean-reviewer
+  model: sonnet
+  description: Review Korean: <filename>
+  prompt: |
+    Review the Korean text in 01-inbox/<filename>.md.
+    Read the file, skip frontmatter, review body text only.
+```
+
+Handle results:
+- **CLEAN**: No action needed.
+- **HAS_SUGGESTIONS**: Apply all suggestions using Edit tool.
 
 ## Step 6: Handle Failures
 

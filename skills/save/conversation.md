@@ -1,6 +1,6 @@
 # Save Conversation
 
-Save conversation content as a note, outputting to `.context/` for the orchestrator to process.
+Save conversation content as a note, outputting to `$SAVE_CTX/` for the orchestrator to process.
 
 ## Input
 
@@ -29,11 +29,11 @@ Rules:
 4. **Preserve concrete details**: Commands, code blocks, configuration examples, and specific numbers from the conversation should be included when relevant.
 5. **Match conversation language**: Write in the same language the conversation was conducted in.
 
-Write the note body to `.context/extracted.txt` using the Write tool.
+Write the note body to `$SAVE_CTX/extracted.txt` using the Write tool.
 
 ### Step 3: Write Metadata
 
-Write `.context/meta.json` using the Write tool:
+Write `$SAVE_CTX/meta.json` using the Write tool:
 ```json
 {
   "type": "conversation"
@@ -49,4 +49,4 @@ Tell the orchestrator that extraction is complete. The orchestrator handles file
 - **Preserve examples**: Concrete examples, numbers, and analogies are the most valuable parts of a conversation - never omit them
 - **Match language**: Write the body in the same language as the conversation
 - **No sensitive data**: Don't include API keys, passwords, or personal information
-- **NO FILE SAVING**: Only write to `.context/extracted.txt` and `.context/meta.json` -- the orchestrator handles the final save
+- **NO FILE SAVING**: Only write to `$SAVE_CTX/extracted.txt` and `$SAVE_CTX/meta.json` -- the orchestrator handles the final save

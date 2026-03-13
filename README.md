@@ -68,10 +68,8 @@ npx skills add git@github.com:toy-crane/obsidian-skills.git
 ## Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI
-- [Defuddle](https://github.com/kepano/defuddle) CLI (`npm install -g defuddle`) -- for web page extraction
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) -- for YouTube transcript extraction
+- [Defuddle](https://github.com/kepano/defuddle) CLI (`npm install -g defuddle`) -- for web page and YouTube transcript extraction
 - [uv](https://github.com/astral-sh/uv) -- for Excalidraw rendering (Python)
-- [Bun](https://bun.sh/) -- for running TypeScript scripts
 
 ## License
 
